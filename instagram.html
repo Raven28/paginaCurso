@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  *{
+    box-sizing: border-box;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .list-post{
+    display: grid;
+    grid-template-columns: repeat(3,minmax(150px,250px));
+    justify-content: center;
+    grid-gap: 28px;
+  }
+
+  .box-post{
+    height: auto;
+    box-shadow: 1px 2px 1px #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+   
+  }
+
+  .box-post .box-post-imagen{
+      width: 100%;
+  }
+
+  .box-post .box-post-info{
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .8);
+      border-radius: inherit;
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center ;
+
+  }
+
+  .box-post .box-post-info span{
+      font-family: sans-serif;
+      font-weight: 600;
+      width: 100%;
+      display: block;
+  }
+  .box-post:hover .box-post-info {
+    display: flex;
+  }
+
+  @media  screen and (max-width: 768px) {
+
+        .list-post{
+          grid-gap:8px;
+          grid-template-columns: repeat(auto-fill,minmax(150px,250px));
+        }
+  }
+
+
+  
+
+</style>
+<body>
+
+  <section class="list-post">
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+    <section class="box-post">
+      <figure>
+          <img class="box-post-imagen" src="/images/compu.jpg" alt="">
+      </figure>
+      <div class="box-post-info">
+        <div>
+   <span class="box-post-likes">192 Likes</span>
+          <span class="box-post-comments">20 Comments</span>
+        </div>
+         
+      </div>
+    </section>
+
+  </section>
+
+ 
+  
+</body>
+</html>

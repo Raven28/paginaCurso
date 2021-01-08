@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position and margin</title>
+    <style>
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+      ul{
+        margin: 0;
+        padding: 0;
+      }
+      h1{
+        margin:0;
+        padding:0;
+      
+      }
+
+
+  /* container header  */
+      .header{
+          height: 500px;
+          display:table;
+          width:100%;
+          margin: 5px  0;
+          text-align: center;
+          box-shadow: 2px 1px 1px rgba(0, 0, 0,0.2);
+          background-image: url(images/platzi-conf.jpg)  ; 
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-position: center;
+          background-size: cover;
+          border: 1px #ddd solid;
+          box-sizing: border-box;
+
+
+      }
+
+      .header div{
+        display:table-cell;
+        vertical-align: middle;
+     
+      }
+
+      .header::before{
+        height: 50px;
+        width: 50px;
+        content: "";
+        top: 50%;
+        position: absolute;
+        left: 50%;
+        background-image: url(images/envelope.svg);
+        background-size: 32px 32px;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        transform: translate(-50%,0);
+      }
+
+     
+
+      .header h1{
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       font-weight: bold;
+       font-size: 3em;
+       color: white;
+
+      }
+
+       .header p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1em;
+        color: white;
+       }
+
+       /* -----------------------------------------  */
+
+      .color{
+        background-color: #ccc;
+        border-radius: 5px;
+
+      }
+
+      .menu{
+        
+        display:table;
+        width: 100%;
+        margin: 5px  0;
+        text-align: center;
+        position: relative;
+      }
+      .menu ul {
+        width: 100%;
+      }
+
+      .menu ul li{
+        float: left;
+        list-style: none;
+      
+      }
+
+      .menu ul li a{
+        display: block;
+        text-decoration: none;
+        padding: 15px 25px;
+        background-color: #333;
+        color: white;
+      }
+
+      .menu ul li:last-child{
+        float: right;
+        list-style: none;
+      }
+
+      .menu ul li a:hover{
+        background-color: #ccc;
+      }
+
+      .container{
+         height: auto;
+         width: 100%;
+         display: block;
+         margin: 5px 0;
+         overflow: hidden;
+
+      }
+
+      .container section:first-child{
+        float: left;
+        width: 79%;
+        margin-right: 3px;
+        box-sizing: border-box;
+       
+
+      }
+
+      .container section:first-child article{
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+
+      .container section:first-child article .image{
+         height: 150px;
+         width: 100%;
+         background-color: #ccc;
+         border: 1px black solid;
+      }
+
+      .container section:first-child article h1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.5em;
+
+      }
+
+      .container section:first-child article p{
+        font-size: 1em;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      
+
+      .container section:last-child{
+        float: left;  
+        width: 20%;
+        border: 1px red solid;
+        padding: 10px;
+        box-sizing: border-box;
+
+      }
+
+    
+
+     
+
+      .footer{
+        width: 100%;
+        text-align: center;
+        min-height: 100px;
+        margin: 5px 0;
+        text-align: center;
+        display:block;
+      }
+
+      .content-dynamic{
+          position: relative;
+          border: 5px red dashed;
+          height: 150px;
+      }
+
+    
+
+      .content-dynamic ul li{
+        display: inline-block;
+        margin: 5px;
+
+      }
+
+      .content-dynamic ul li a{
+         text-align: center;
+         padding: 14px 20px;
+         border: 1px green dashed;
+         text-decoration: none;
+         color: white;
+         line-height: 3;
+         background-color: #4CAF50;
+
+      }
+
+    .tooltip{
+        position: relative;
+       
+        
+      }
+
+      .tooltip .tooltip-text{
+        position: absolute;
+        background-color: #ccc;
+        color: #fff;
+        left:0%;
+        top: -100%; 
+        text-align: center;
+        border-radius: 6px;
+        margin: 5px;
+        padding: 5px 10px;
+        display: none;
+        min-width: 100px;
+        z-index: 101;
+       
+      }
+
+      .tooltip:hover .tooltip-text {
+       display: block;
+       
+      }
+
+      @media screen and (max-width: 600px) {
+        .container section{
+          width: 100%;
+        }
+}
+      
+
+   
+
+    
+    </style>
+</head>
+<body>
+ 
+
+  <section class="header color">
+    <div>
+      <h1>My Website</h1>
+      <p>Resize the browser window to see the effect.</p>
+    </div>
+  </section>
+  <section class="menu color">
+    <ul>
+      <li class="tooltip"><a href="">Link</a>
+        <div class="tooltip-text">
+          link test
+        </div>
+      </li>
+      <li class="tooltip"><a href="">Link</a>
+        <div class="tooltip-text">
+          link test
+        </div>
+      </li>
+      <li class="tooltip"><a href="">Link</a>
+        <div class="tooltip-text">
+          link test
+        </div>
+      </li>
+      <li class="tooltip"><a href="">Link</a>
+        <div class="tooltip-text">
+          link test
+        </div>
+      </li>
+    </ul>
+  </section>
+  <div class="container">
+    <section class=" color">
+      <article>
+        <h1>TITLE HEADING</h1>
+        <h6>Title description, Dec 7, 2017</h6>
+        <div class="image">
+  
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, numquam alias odio modi commodi inventore vero nulla nisi, perspiciatis ipsum, cum fugiat debitis voluptas cupiditate sit odit nihil dignissimos culpa!</p>
+      </article>
+
+      <article>
+        <h1>TITLE HEADING</h1>
+        <h6>Title description, Dec 7, 2017</h6>
+        <div class="image">
+  
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, numquam alias odio modi commodi inventore vero nulla nisi, perspiciatis ipsum, cum fugiat debitis voluptas cupiditate sit odit nihil dignissimos culpa!</p>
+      </article>
+    </section>
+    <section class="container__lateral color">
+      <h1>Main</h1>
+    </section>
+
+ 
+  </div>
+  <section class="footer  color">
+    <h1>Pie de pagina</h1>
+  </section>
+
+</body>
+</html>

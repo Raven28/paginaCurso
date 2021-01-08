@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Float en CSS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+      .cuadrado{
+        width: 32.33%;
+        height:auto;
+        /* Ubicar a la izquierda */
+        display: inline-block;
+        vertical-align: top;;
+        margin: .5%;
+        border-radius: 5px;
+        box-shadow: 5px #ccc;
+        background: white;
+
+     
+      }
+
+      a[href="default.asp"] {
+      background-color: yellow;
+      }
+
+      .cuadrado img{
+        border-radius:  5px 5px 0 0;
+        object-fit: cover;
+        width:100%;
+      }
+
+      .cuadrado div{
+        background-color: #1D252C;
+        position: relative;
+        border-radius: 5px;
+        color: white;
+        margin-top: -150px;
+     
+      }
+
+      .cuadrado div a {
+          width: 100px;
+          display: block;
+          text-align: center;
+          padding: 5px 10px;
+          margin: 10px auto;
+          text-decoration: none;
+          background-color:#ccc;
+          color: black;
+      }
+
+      .cuadrado div a:hover{
+        background-color:#1D252C ;
+        color: white;
+        border: 1px white solid ;
+      }
+
+    
+      .rojo{
+       
+      }
+      .azul{
+        background: blue;
+      }
+      .verde{
+        background: green;
+      } 
+      .clear{
+        clear:left;
+        background: tomato;
+      }
+
+      p{
+        padding: 10px;
+       
+      }
+
+      .elemento{
+          border: 1px red dashed;
+          content:"";
+          clear: both;
+          min-height: 500px;
+          margin-top: 50px;
+          background-color: yellow;
+      }
+
+      body{
+
+        margin: 0;
+      }
+
+      ul  {
+        
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        float: right;
+        display: block;
+        margin: 5px 10px 0 0;
+       
+      }
+
+
+
+      .header .logo,.header ul  {
+        display: inline-block;
+        vertical-align: top ;
+      }
+
+      .header .logo {
+       
+       float: left;
+     
+      }
+
+
+     
+
+      ul li {
+         
+          background-color:  #1D252C ;
+          display: inline-block;
+         
+         
+
+      }
+
+      ul li a{
+        display: block;
+        border-radius: 3px;
+        padding: 10px;
+        color:white;
+        text-decoration: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      ul li a:hover{
+          background-color: #ffffff ;
+          color: #1D252C;
+
+      }
+
+      .header{
+        
+        width: 100%;
+        position: fixed;  
+        background-color:  #1D252C ;
+        float: left;
+        top: 0;
+      
+     
+      }
+
+      .combo{
+      
+        position: relative;
+        color: #ffffff;
+        width: 110px;
+        background-color:  #1D252C;;
+        padding: 10px 40px 10px 10px;
+        background-image: url('/images/envelope.svg');
+        background-repeat: no-repeat;
+        background-position-x: 90%;
+        background-position-y: center;
+        background-size: 20px 30px;
+
+      }
+
+
+      .combo__items{
+        display: block;
+      }
+     
+      .combo__items  {
+          position: absolute;
+          display: none;
+          left: 0;
+          top: 100%;
+          background: #1D252C;
+          color: #ffffff;
+          width: 100%;
+          
+      }
+
+      .combo__items ul li{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        padding: 10px 5px;
+      }
+
+      .combo__items ul li:hover{
+        background-color: white;
+        color:  #1D252C;
+      }
+
+      .combo:hover {
+        background-color: teal;
+      }
+
+      .combo:hover  .combo__items{
+        display: block;
+      
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+
+  <div class="header">
+
+    <!-- <div class="combo">
+      <span>Mouse over me</span>
+        <div class="combo__items">
+            <ul>
+              <li>Item Element</li>
+              <li>Item Element</li>
+              <li>Item Element</li>
+              <li>Item Element</li>
+            </ul>
+        </div>
+
+    </div> -->
+   
+      <div class="logo">
+  
+        <img src="/images/logo.png" alt="logo principal" height="50px"/>
+      </div>
+         <ul >
+           <li class="logo__list-item"><a href="default.asp">Home</a></li>
+           <li><a href="news.asp">News</a></li>
+           <li><a href="contact.asp">Contact</a></li>
+           <li><a href="about.asp">About</a></li>
+         </ul>
+
+   
+
+  </div>
+
+
+    <div class="elemento">
+      
+     
+      <div class="cuadrado rojo izquierda">
+        <img src="/images/hero.jpg" alt="imagen 1">
+        <div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odit alias delectus necessitatibus molestiae distinctio ad! Aliquid laboriosam reprehenderit, consequuntur itaque unde veritatis autem, eligendi dolorem, dolores obcaecati numquam enim.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, voluptas quis sequi animi doloribus aperiam vitae unde reprehenderit temporibus corrupti illo, blanditiis rerum corporis. Ipsam blanditiis ipsa minus corporis amet.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, similique! Ipsam omnis consectetur explicabo rem, molestias cupiditate consequatur, doloribus labore nostrum praesentium at suscipit hic magni in, eveniet voluptatibus amet.
+          </p>
+          <a href="">Ver mas </a>
+        </div>
+      
+     </div>
+
+     <div class="cuadrado rojo izquierda">
+      <img src="/images/hero.jpg" alt="imagen 1">
+      <div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odit alias delectus necessitatibus molestiae distinctio ad! Aliquid laboriosam reprehenderit, consequuntur itaque unde veritatis autem, eligendi dolorem, dolores obcaecati numquam enim.
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, voluptas quis sequi animi doloribus aperiam vitae unde reprehenderit temporibus corrupti illo, blanditiis rerum corporis. Ipsam blanditiis ipsa minus corporis amet.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, similique! Ipsam omnis consectetur explicabo rem, molestias cupiditate consequatur, doloribus labore nostrum praesentium at suscipit hic magni in, eveniet voluptatibus amet.
+        </p>
+      <a href="">Ver mas </a>
+      </div>
+    
+   </div>
+   <div class="cuadrado rojo izquierda">
+    <img src="/images/hero.jpg" alt="imagen 1">
+    <div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odit alias delectus necessitatibus molestiae distinctio ad! Aliquid laboriosam reprehenderit, consequuntur itaque unde veritatis autem, eligendi dolorem, dolores obcaecati numquam enim.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae, voluptas quis sequi animi doloribus aperiam vitae unde reprehenderit temporibus corrupti illo, blanditiis rerum corporis. Ipsam blanditiis ipsa minus corporis amet.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, similique! Ipsam omnis consectetur explicabo rem, molestias cupiditate consequatur, doloribus labore nostrum praesentium at suscipit hic magni in, eveniet voluptatibus amet.
+      </p>
+      <a href="">Ver mas </a>
+    </div>
+  
+ </div>
+
+
+
+    </div>
+
+    
+     
+    
+ 
+    
+  </body>
+</html>

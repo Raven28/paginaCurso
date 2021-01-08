@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<style>
+
+  a{
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  }
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+    [class*="col-"] {
+    float: left;
+  
+  }
+
+
+  .header{
+   
+     height: 50px;
+     background-color: white;
+     border-bottom: 1px #ccc solid; 
+     padding-bottom: 8px;
+     font-size: 16px;
+     position: relative;
+     color: black;
+     
+  }
+
+  .header > div{
+      display: inline-block;
+      height: inherit;
+      box-sizing: border-box;
+      position: relative;
+      
+      vertical-align: top;
+    
+  }
+
+  .header-logo{
+    background-image: url(/images/logo.svg);
+    background-size: 8em 4em;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .header-logo .header-icon-menu{
+    float: left;
+    font-size: 1.5em;
+    padding: 0 3px;
+    height: inherit;
+    line-height: 50px;
+    z-index: 2;
+  
+  }
+
+  .header-logo .header-icon-menu a{
+    color: black;
+  }
+
+  .header-logo .header-icon-search{
+    float: right;
+    font-size: 1.5em;
+    padding: 5px;
+    height: inherit;
+  
+  }
+
+  .header-logo .header-icon-search img{
+       width: 20px;
+       height: 20px;
+       display: inline-block;
+       vertical-align: middle;
+  }
+  .header-logo .header-icon-search,.header-logo .header-icon-menu{
+    display: none;
+  }
+
+  
+
+
+ 
+
+
+  .header-search input{
+      width: 60%;
+      height: 30px;
+      border: 2px solid #ccc;
+      outline: none;
+      border-radius: 5px;
+      background-image: url(/images/search.png);
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: 5px;
+      background-size: 18px;
+      padding-left: 30px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    
+     
+    
+     
+     
+     
+  }
+
+  
+
+  ul,body{
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-menu ul li{
+    display: inline-block;
+    padding: 0 5px;
+   
+  }
+
+  .header-menu ul li a{
+      text-decoration: none;
+      padding: 10px 5px;
+      color: black;
+      line-height: 3;
+      box-sizing: border-box;
+      word-spacing: 10px;
+      border: 2px transparent solid;
+      font-weight: 600;
+      border-radius: 5px;
+
+  }
+  .header-menu ul{
+    height: inherit;
+    display: inline-block;
+    vertical-align: top;
+    
+  }
+
+  .header-menu ul li a:hover{
+   
+     border: 2px rgba(0, 0, 0, .7) solid;
+   
+  }
+
+  .header-menu  .header-login{
+    background-color: rgba(0, 0, 0, .8);
+    padding: 7px 13px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    word-spacing: normal;
+  }
+
+
+  .header-login:hover{
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 20px;
+  }
+
+ 
+
+  .header .header-burger-menu{
+    width:50vw ;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    left: -50vw;
+    top: 0;
+    z-index: 3;
+    transition: left 1s;
+    box-shadow: 1px 1px 1px 0px #ccc;
+    display: none;
+  }
+  
+
+
+
+  
+@media only screen and (max-width: 1123px) {
+  .item-menu{
+    display: none;
+
+  }
+
+  .header{
+   font-size: 14px;
+
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .header .header-burger-menu{
+      display: block !important;
+  }
+
+  .header-search.col-5{
+      display: none;
+    }
+
+    .header-menu.col-5{
+      display: none;
+    }
+
+    .header-logo.col-2{
+      width: 100%;
+    }
+
+    
+    .header-logo .header-icon-search,.header-logo .header-icon-menu{
+    display: block;
+  }
+
+    
+  }
+
+  
+
+
+ 
+
+</style>
+<body>
+
+  <section class="header col-12">
+    <section class="header-burger-menu">
+
+    </section>
+    <div class="header-logo col-2">
+      <div class="header-icon-menu">
+
+        <a href="">  <i class="icon-menu"></i></a>
+      
+      </div>
+      <div class="header-icon-search">
+       <img src="/images/search.png" alt="">
+      </div>
+    </div>
+
+    <div class="header-search col-5">
+        <input type="text" >
+    </div>
+
+    <div class="header-menu col-5">
+    
+
+        <ul>
+          <li><a href=""><i class="icon-plus"></i> <span class="item-menu">Publicar</span></a></li>
+          <li><a href=""><i class="icon-bell"></i> <span class="item-menu">Alertas</span> </a></li>
+          <li><a href=""><i class="icon-heart"></i> <span class="item-menu">Viajes</span> </a></li>
+        <li>
+         
+            <a class="header-login" href="">Iniciar Sesión</a>
+          
+        </li>
+        </ul>
+        
+    
+    </div>
+
+  
+
+  </section>
+
+
+  
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colums</title>
+</head>
+<style>
+
+  ul{  
+    margin: 0px;
+    padding: 0px;
+  
+  }
+  a{  
+   text-decoration: none;
+  
+  }
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  .container{
+    display: grid;
+    grid-gap: 10px;
+    height: 100vh;
+    grid-template-areas: "header  header"
+                          "container container"
+                          "footer footer";
+   grid-template-rows: 1fr 3fr 1fr;
+   grid-template-columns: 200px 1fr  ;
+  }
+
+  .container-header{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: inherit;
+  }
+
+  .container-header .subitem{
+     
+     
+      height: inherit;
+  }
+
+  .container-header .subitem:first-child img{
+      object-fit: cover;
+      height: inherit;
+      display: flex;
+      margin-left: 1em;
+  }
+
+  .container-header .subitem:nth-child(2) ul li {
+      display: inline-block;
+  }
+  .container-header .subitem:nth-child(2) ul li:last-child a{
+      padding: 8px 25px;
+      border-radius: 20px;
+      font-weight: 600;
+      line-height: 3;
+      color: black;
+      background-color: white;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  }
+
+  .container-header .subitem:nth-child(2) ul li a{
+      padding: 12px 10px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 600;
+      color: white;
+      line-height: 3;
+     
+     
+  }
+
+  .container-header .subitem:nth-child(2) ul{
+      float: right  ;
+      padding-right:1em ;
+  }
+
+  .container-header .subitem:nth-child(2) ul li a:hover{
+    background-color: white;
+    color: #1D252C;
+  }
+
+  
+
+  .item{
+   
+  
+  }
+
+  
+  .item.header{
+    grid-area: header ;
+    background-color: #1D252C;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    box-shadow: 10px 1px 8px #888888;
+                
+  }
+
+  .menu{
+    grid-area: menu ;
+                
+  }
+
+  .container{
+    grid-area: container ;
+   
+                
+  }
+
+  .footer{
+    grid-area: footer ;
+                
+  }
+
+  .item.container  {
+     
+     display: grid;
+     border: 1px red dashed;
+     grid-template-columns:  [inicio-col] 1fr [linea2] 1fr [linea3] 1fr [linea4] 1fr [linea5]  1fr [linea6]  1fr [linea7] 1fr [final-col];
+     grid-template-rows: [inicio-row] 150px [linea2] 150px  [final-row];
+     grid-gap: 10px;
+     margin-top: 50px;
+     height: auto;
+
+  }
+
+  .item.container .subitem{
+    border: 1px orange dashed;
+  }
+
+  .item.container .subitem:nth-child(1)  {
+     
+    border: 1px red solid;
+    background-color: red;
+    grid-column: inicio-col / linea4;
+    grid-row:  inicio-row / final-row;
+
+  }
+
+  .item.container .subitem:nth-child(2)  {
+     
+     border: 1px red solid;
+     background-color: red;
+     grid-column: linea4 / linea6;
+     grid-row:  inicio-row / final-row;
+ 
+   }
+
+   .item.container .subitem:nth-child(3)  {
+     
+     border: 1px red solid;
+     background-color: blue;
+     grid-column: linea6 / final-col; 
+    
+ 
+   }
+
+ 
+
+</style>
+<body>
+  <div class="container">
+    <div class="item header">
+        <div class="container-header">
+            <div class="subitem">
+                <img src="/images/logo.png" alt="">
+
+            </div>
+         
+            <div class="subitem">
+
+              <ul>
+                <li><a href="">Contacto</a></li>
+                <li><a href="">Servicios</a></li>
+                <li><a href="">Siguenos</a></li>
+                <li><a href="">Login</a></li>
+              </ul>
+            </div>
+
+        </div>
+
+    </div>
+   
+    <div class="item container">
+          <div class="subitem"></div>
+          <div class="subitem"></div>
+          <div class="subitem"></div>
+          <div class="subitem"></div>
+          <div class="subitem"></div>
+    </div>
+    <div class="item footer">Footer</div>
+   
+  </div>
+  
+</body>
+</html>

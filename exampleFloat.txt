@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Float en CSS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+      .cuadrado{
+        width: 200px;
+        height: 200px;
+        margin: 2px;
+        /* Ubicar a la izquierda */
+        float: left;
+      }
+      .rojo{
+        background: red;
+      }
+      .azul{
+        background: blue;
+      }
+      .verde{
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cuadrado rojo">
+    </div>
+    <div class="cuadrado azul">
+    </div>
+    <div class="cuadrado verde">
+    </div>
+  </body>
+</html>

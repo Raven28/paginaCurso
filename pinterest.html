@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  .list-elements{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);
+    grid-gap: 10px;
+    justify-content: center;
+  }
+
+  .element-post{
+    background-color: #ccc;
+    
+  }
+
+  .element-post img{
+    width: 100%;
+    justify-self: center;
+  }
+
+  .element1{
+    grid-row-end: span 3;
+  
+  }
+  .element2{
+    grid-row-end: span 2;
+    
+  }
+  .element3{
+    grid-row-end: span 1;
+   
+  }
+
+</style>
+<body>  
+
+  <div class="list-elements">
+
+    <div class="element-post element1">
+      <img src="/images/landing.png" alt="">
+    </div> 
+    <div class="element-post element2">
+      <img src="/images/t_shirt.png" alt="">
+    </div> 
+    <div class="element-post element3">
+      <img src="/images/house.png" alt="">
+    </div> 
+
+    <div class="element-post element1">
+      <img src="/images/landing.png" alt="">
+    </div> 
+    <div class="element-post element2">
+      <img src="/images/t_shirt.png" alt="">
+    </div> 
+    <div class="element-post element3">
+      <img src="/images/house.png" alt="">
+    </div> 
+  
+    <div class="element-post element1">
+      <img src="/images/landing.png" alt="">
+    </div> 
+    <div class="element-post element2">
+      <img src="/images/t_shirt.png" alt="">
+    </div> 
+    <div class="element-post element3">
+      <img src="/images/house.png" alt="">
+    </div> 
+  
+   
+
+  </div>
+  
+  
+</body>
+</html>

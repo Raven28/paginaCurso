@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platzi</title>
+</head>
+
+<style> 
+
+body,p{
+  margin: 0;
+}
+
+*{
+  box-sizing: border-box;
+
+}
+
+.hero{
+  background-color: #002C44;
+  color: white;
+  padding: 30px;
+}
+
+.title{
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.description{
+ 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.form{
+  background-color: #f2f2f2;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.form input{
+   outline: 0;
+   width: 100%;
+   border: white;
+   display: block;
+   padding: 12px 10px;
+   margin-bottom: 10px;
+   margin:10px auto;
+   border-radius: 5px;
+  
+  
+}
+
+.form button{
+  display: block;
+  padding: 12px 10px;
+  border: 0;
+  background-color: yellowgreen;
+  border-bottom: 5px #ccc solid ;
+  color: white;
+  border-radius: 5px;
+  margin:10px auto;
+  font-weight: 700;
+  outline: 0;
+}
+
+.countdown{
+  color: white;
+  display: block;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+
+}
+
+.hero-container{
+  display: grid;
+  grid-template-columns: 73px 1fr 300px;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: "imagen title form"
+                       ". description form"
+                       ". countdown  form";
+
+  grid-gap: 10px;
+ 
+}
+
+ .imagen{
+   grid-area: imagen;
+   max-width: 73px;
+   margin: 0;
+}
+
+ .title{
+   grid-area: title;
+}
+
+.description{
+   grid-area: description;
+}
+
+.form{
+   grid-area: form;
+}
+
+.form p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #002C44 ;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+.countdown{
+   grid-area: countdown;
+   align-content: center;
+}
+
+.countdown span::after{
+  content: ":";
+}
+
+.countdown span:last-child::after{
+  content: " ";
+}
+
+.hero-container .imagen img{
+   max-width: 73px;
+}
+
+@media screen and (max-width: 763px) {
+  .hero-container{
+
+    grid-template-columns: 73px 1fr ;
+    grid-template-rows: 73px 1fr 100px 1fr ;
+    grid-template-areas: "imagen title"
+                          "description description"
+                          " countdown  countdown"
+                          " form  form"
+                          ;
+                     
+                      
+                      
+
+ 
+ 
+}
+}
+
+
+</style>
+<body>
+
+  <section class="hero">
+    <div class="hero-container">
+
+      <figure class="imagen">
+         <img src="/images/badge.png" alt="curso de react">
+      </figure>
+      <div class="title">
+        <h1>
+          Curso de React
+        </h1>
+      </div>
+
+      <div class="description">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, eveniet! Odit vel ipsa animi doloribus voluptas voluptatum placeat, labore amet quae pariatur impedit, laborum, ratione rerum. Similique iure hic accusantium?
+        </p>
+      </div>
+
+
+      <form class="form">
+          <p>Registrate a platzi</p>
+          <input type="text" placeholder="Nombre">
+          <input type="text" placeholder="Correo electronico">
+          <button type="submit">Comienza ahora</button>
+
+      </form>
+      <div class="countdown">
+       
+          <p>
+            Lanzamiento :
+          </p>
+      
+
+      
+          
+        <span>01d</span>
+        <span>03h</span>
+        <span>04m</span>
+        <span>04s</span>
+      
+      
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>
