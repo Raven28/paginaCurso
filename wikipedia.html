@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia Clone</title>
+</head>
+
+<style>
+
+  :root{
+    --main-color:#36c;
+  }
+
+    body,p,input,h3{
+      margin: 0;
+      padding: 0;
+      font-family: Linux Libertine,Georgia,Times,serif;
+    }
+    a{
+      text-decoration: none;
+    }
+
+    .header{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .header-container{
+      margin: 40px 0;
+    }
+
+    .header-container img{
+      width: 176px;
+      height: 32px;
+      margin: 0 auto;
+      display: block;
+     
+    }
+    .header-container h3{
+      text-align: center;
+      font-size: 15px;
+      font-weight: 100;
+      margin-bottom: 40px;
+    }
+
+    .header-main-menu{
+      width: 100%;
+      position: relative;
+      height: 325px;
+      width: 546px;
+      background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png");
+      background-size: 220px 200px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .header-main-menu .header-item-menu-title{
+        color: var(--main-color);
+        font-weight: 700;
+        text-align: center;
+    }
+    .header-main-menu .header-item-menu-title:hover{
+       text-decoration: underline;
+    }
+
+    .header .header-item-menu{
+    
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      font-size: 13px;
+     
+    
+    }
+
+    .header .header-item-menu.item1{
+      top: 0;
+      right: 60%; 
+    }
+    .header .header-item-menu.item2{
+      top: 0%;
+      right: 20%; 
+    }
+
+    .header .header-item-menu.item3{
+      top: 20%;
+      right: 75%; 
+    }
+
+    .header .header-item-menu.item4{
+      top: 20%;
+      right: 5%; 
+    }
+
+    
+    .header .header-item-menu.item5{
+      top: 40%;
+      right: 75%;
+    }
+    
+    .header .header-item-menu.item6{
+      top: 40%;
+      right: 2%;
+    }
+
+    
+    .header .header-item-menu.item7{
+      top: 65%;
+      right: 75%; 
+    }
+
+    
+    .header .header-item-menu.item8{
+      top: 65%;
+      right: 9%;
+    }
+    
+    .header .header-item-menu.item9{
+      top: 85%;
+      right: 65%;
+    }
+    
+    .header .header-item-menu.item10{
+      top: 85%;
+      right: 20%;
+    }
+
+    .header .header-input-search{
+        height: inherit;
+        border-radius: 3px 0 0 3px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        border: 1px black solid;
+       
+       
+    }
+
+
+ 
+
+    .header .header-item-menu span:last-child{
+      display: block;
+      width: inherit;
+      color: black;
+    }
+
+    .container-input-search{
+      display: flex;
+      position: relative;
+      height: 40px;
+      width: 80%;
+      margin: 0 auto;
+     
+
+
+    }
+
+    .input-search{
+      display: flex;
+      position: relative;
+      height: inherit;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .container-input-search .header-input-search:focus{
+        border: none;
+        box-shadow: inset 0 0 0 3px  var(--main-color);
+        outline: 0;
+    }
+
+    .container-input-search button img{
+      max-width: 100%;
+      object-fit: contain;
+      width: 22px;
+      height: 22px;
+    }
+
+    .container-input-search button {
+        width: 65px;
+        padding: 5px ;
+        height: 42px;
+        background-color:rgba(51, 102, 221, 1);
+        border: none;
+        border-radius: 0 3px 3px 0;
+    }
+    .container-input-search button:hover{
+      background-color:rgba(51, 102, 221, .8);
+      cursor: pointer;
+    }
+    .container-input-search select{
+      position: absolute;
+      outline: none;
+      width: 40px;
+      border: none;
+      right: 3px;
+      height: 34px;
+      top: 3px;
+      margin: 0;
+       
+    }
+
+    .menu-bottom{
+      display: grid;
+      margin: 40px;
+      padding-top: 20px;
+      grid-template-columns:  minmax(150px,350px) 1fr;
+      grid-template-areas: "menu-bottom-left1  menu-bottom-right"
+                           "menu-bottom-left2  menu-bottom-right";
+      font-size: 13px;
+      color: #54595d;
+      grid-column-gap: 50px;
+      border-top: 1px solid #c8ccd1;
+    }     
+    .menu-bottom-left1{
+      grid-area: menu-bottom-left1;
+      padding: 10px;
+    }      
+    .menu-bottom-left2{
+      grid-area: menu-bottom-left2;
+      padding: 10px;
+    }           
+    .menu-bottom-right{
+      grid-area: menu-bottom-right;
+    }   
+    .menu-bottom .menu-bottom-right{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,1fr);
+      align-items: center;
+      justify-items: center;
+      padding: 10px;
+      grid-column-gap: 20px;
+      grid-row-gap: 30px;
+    }
+
+    .menu-bottom .menu-bottom-right > div{
+    
+      width: 100%;
+    }
+    .menu-bottom-left1,.menu-bottom-left2,.menu-bottom-right .menu-bottom-right-item{
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      grid-template-rows: 42px 1fr;
+      column-gap: 10px;
+      row-gap: 5px;
+      justify-items: initial;
+    }
+
+    .menu-bottom-left2{
+      background-color: #f8f9fa;
+    }
+
+    .menu-bottom-left1 div:last-child, .menu-bottom-left2 div:last-child,.menu-bottom-right .menu-bottom-right-item  div:last-child{
+      grid-row: span 2;
+    }
+
+    .sprite {
+        background-image: url(portal/wikipedia.org/assets/img/sprite-46c49284.png);
+        background-image: linear-gradient(transparent,transparent),url(https://www.wikipedia.org/portal/wikipedia.org/assets/img/sprite-46c49284.svg);
+        background-repeat: no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .logo-item-left1 {
+      background-position: 0 -212px;
+      width: 42px;
+      height: 42px;
+    }
+
+    .logo-item-left2{
+      background-position: 0 -719px;
+      width: 42px;
+      height: 42px;
+    }
+
+ 
+    .menu-bottom-right > div:nth-child(1) div:first-child {
+       
+       background-position: 0 0;
+       width: 47px;
+       height: 47px;
+
+   }
+
+    .menu-bottom-right > div:nth-child(2) div:first-child {
+      background-position: 0 -446px;
+      width: 36px;
+      height: 36px;
+
+    }
+
+    .menu-bottom-right > div:nth-child(3) div:first-child {
+      background-position: 0 -482px;
+      width: 37px;
+      height: 37px;
+    }
+    .menu-bottom-right > div:nth-child(4) div:first-child {
+    
+      background-position: 0 -126px;
+      width: 37px;
+      height: 37px;
+    }
+    .menu-bottom-right > div:nth-child(5) div:first-child {
+      background-image: url('https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikinews-logo_sister@2x.png');
+      background-position: 0 0;
+      background-size: 47px 26px;
+      width: 47px;
+      height: 26px;
+    }
+
+    .menu-bottom-right > div:nth-child(6) div:first-child 
+    {
+      background-position: 0 -163px;
+      width: 49px;
+      height: 49px;
+    }
+
+    .menu-bottom-right > div:nth-child(7) div:first-child 
+    {
+        background-position: 0 -409px;
+        width: 43px;
+        height: 37px;
+    }
+    .menu-bottom-right > div:nth-child(8) div:first-child 
+    {
+
+      background-position: 0 -286px;
+      width: 42px;
+      height: 42px;
+    }
+    .menu-bottom-right > div:nth-child(9) div:first-child 
+
+    {
+      background-position: 0 -47px;
+      width: 42px;
+      height: 42px
+    }
+    .menu-bottom-right > div:nth-child(10) div:first-child 
+    {
+      background-position: 0 -328px;
+      width: 39px;
+      height: 39px;
+
+    }
+    .menu-bottom-right > div:nth-child(11) div:first-child 
+    {
+
+      background-position: 0 -367px;
+      width: 42px;
+      height: 42px;
+
+    }
+    .menu-bottom-right > div:nth-child(12) div:first-child 
+    {
+      background-position: 0 -89px;
+      width: 37px;
+      height: 37px;
+    }
+
+
+    .menu-bottom-right h3{
+        color: var(--main-color);
+        margin-bottom: 5px;
+    }
+    .menu-bottom-left2 .menu-bottom-left2-buttons
+    {
+        list-style: none;
+        width: 100%;
+        padding: 0;
+    }
+    .menu-bottom-left2 .menu-bottom-left2-buttons li{
+        display: inline-block;
+    
+    }
+
+    .menu-bottom-left2 .menu-bottom-left2-buttons li:first-child a{
+      background-position: 0 -541px;
+      width: 124px;
+      height: 19px;
+    }
+    .menu-bottom-left2 .menu-bottom-left2-buttons li:last-child a{
+      background-position: 0 -578px;
+      width: 125px;
+      height: 20px;
+    }
+
+    .menu-bottom-left2 .menu-bottom-left2-buttons li a
+    {
+        list-style: none;
+        padding: 10px 5px;
+    }
+
+    .container-btn-lang{
+      position: relative;
+      display: flex;
+      justify-content: center ;
+      width: 300px;
+      z-index: 2;
+      background-color: white;
+    
+    }
+    .wrap-btn-lang{
+      display: flex;
+      justify-content: center ;
+      width: 100%;
+      position: relative;
+    }
+    .container-btn-lang  button{
+     
+      border: none;
+      background-color: white;
+      padding: 5px ;
+      border: 1px solid #a2a9b1;
+      border-radius: 2px;
+      color: #36c;
+      font-weight: 800;
+     
+     
+    }
+
+    .wrap-btn-lang hr{
+      position: absolute;
+      top: 50%;
+      width: 50%;
+      z-index: 1;
+      transform: translateY(-50%);
+      margin: 0;
+      background-color: #c8ccd1;
+    }
+    
+
+  .container-btn-lang .icon-left-button-lang{
+    background-position: 0 -617px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .container-btn-lang .icon-rigth-button-lang
+  {
+    background-position: 0 -527px;
+    width: 14px;
+    height: 14px;
+
+  }
+   
+
+  @media screen  and (max-width: 763px){
+    
+    .menu-bottom{
+      margin: 10px;
+      padding-top: 10px;
+      
+      grid-template-areas: "menu-bottom-left1  menu-bottom-left1"
+                           "menu-bottom-right  menu-bottom-right"
+                           "menu-bottom-left2  menu-bottom-left2"
+                           ;
+    
+    }
+    .menu-bottom-left1, .menu-bottom-left2{
+      display: block;
+      text-align: center;
+    }
+ 
+  }
+    
+</style>
+<body>
+
+  <header class="header">
+      <section class="header-container">
+        <img src="/images/wikipedia-title.png" alt="">
+        <h3>La enciclopedia libre</h3>
+        <div class="header-main-menu ">
+          <div class="header-item-menu item1">
+            <a href="#">
+              <span class="header-item-menu-title">Español</span>
+              <span>1 651 000+ artículos</span>
+            </a>
+          </div>
+          <div class="header-item-menu item2">
+            <a href="#">
+              <span class="header-item-menu-title">English</span>
+              <span>6 222 000+ articles</span>
+            </a>
+          </div>
+          <div class="header-item-menu item3">
+            <a href="#">
+              <span class="header-item-menu-title">日本語</span>
+              <span>1 246 000+ 記事</span>
+            </a>
+          </div>
+          <div class="header-item-menu item4">
+            <a href="#">
+              <span class="header-item-menu-title">Deutsch</span>
+              <span>2 519 000+ Artikel</span>
+            </a>
+          </div>
+          <div class="header-item-menu item5">
+            <a href="#">
+              <span class="header-item-menu-title">Français</span>
+              <span>2 285 000+ articles</span>
+            </a>
+        </div>
+        <div class="header-item-menu item6">
+          <a href="#">
+            <span class="header-item-menu-title">Русский</span>
+            <span>1 688 000+ статей</span>
+          </a>
+        </div>
+        <div class="header-item-menu item7">
+          <a href="#"> 
+            <span class="header-item-menu-title">Italiano</span>
+            <span>1 663 000+ voci</span>
+          </a>
+        </div>
+        <div class="header-item-menu item8">
+          <a href="#">
+            <span class="header-item-menu-title">中文</span>
+            <span>1 168 000+ 條目</span>
+          </a>
+        </div>
+        <div class="header-item-menu item9">
+          <a href="#"> 
+            <span class="header-item-menu-title">Português</span>
+            <span>1 051 000+ artigos</span>
+          </a>
+        </div>
+
+        <div class="header-item-menu item10">
+          <a href="#">
+            <span class="header-item-menu-title">Polski</span>
+            <span>1 447 000+ haseł</span>
+          </a>
+        </div>
+
+         
+      
+        </div>
+        <div class="container-input-search">
+          <div class="input-search" >
+
+       
+          <input class="header-input-search" type="text">
+          <select class="header-input-select" name="select">
+            <option value="value1" selected>Es</option>
+            <option value="value2" >Value 2</option>
+            <option value="value3">Value 3</option>
+          </select>
+        </div>
+          <button><img src="/images/search-icon.png" alt=""></button>
+        </div>
+       
+      </section>
+
+     
+
+  </header>
+  <section class="wrap-btn-lang">
+      <div class="container-btn-lang">
+      <button>
+        <i class="sprite icon-left-button-lang"></i>
+        <span>Leer Wikipedia en tu idioma</span>
+        <i class="sprite icon-rigth-button-lang"></i>
+      </button>
+     
+    </div>
+    <hr/> 
+  </section>
+  <section class="menu-bottom">
+    <div class="menu-bottom-left1">
+        <div class=" sprite logo-item-left1"></div>
+        <div>
+          <p>Wikipedia es alojada por la Fundación Wikimedia, una organización sin fines de lucro que también alberga una gama de otros proyectos.</p>
+        </div>
+     
+    </div>
+    <div class="menu-bottom-left2">
+      <div class=" sprite logo-item-left2"></div>
+      <div>
+        <h3>Descargar Wikipedia para Android o iOS</h3>
+        <p>Guarda tus artículos favoritos para leerlos sin conexión, sincroniza tus listas de lectura en varios dispositivos y personaliza tu experiencia de lectura con la aplicación oficial de Wikipedia.
+
+          </p>
+          <ul class="menu-bottom-left2-buttons">
+            <li ><a class="sprite  logo-item-button1"></a></li>
+            <li><a class="sprite  logo-item-button2"></a></li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="menu-bottom-right">
+ 
+    <div class="menu-bottom-right-item">
+      <div class=" sprite logo-item"></div>
+      <div>
+        <h3>Commons</h3>
+        <p>Fotos libremente utilizables y más
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class=" sprite logo-item"></div>
+      <div>
+        <h3>Wikiviajes</h3>
+        <p>La guía de viajes libre
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class=" sprite logo-item"></div>
+      <div>
+        <h3>Wikcionario</h3>
+        <p>El diccionario libre
+
+          </p>
+      </div>
+    </div>
+   
+    <div class="menu-bottom-right-item">
+      <div class=" sprite logo-item"></div>
+      <div>
+        <h3>Wikilibros</h3>
+        <p>Libros de contenido libre
+
+          </p>
+      </div>
+    </div>
+    
+    <div class="menu-bottom-right-item">
+      <div class="  logo-item"></div>
+      <div>
+        <h3>Wikinoticias</h3>
+        <p>La fuente de noticias libres
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>Wikidata</h3>
+        <p>Base de conocimiento libre
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>Wikiversidad</h3>
+        <p>Plataforma educativa libre
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>Wikiquote</h3>
+        <p>La colección de citas
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>MediaWiki</h3>
+        <p>Aplicación wiki libre y abierta
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>Wikisource</h3>
+        <p>La biblioteca libre
+
+          </p>
+      </div>
+    </div>
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>Wikispecies</h3>
+        <p>Directorio de especies libre
+
+          </p>
+      </div>
+    </div>
+   
+    <div class="menu-bottom-right-item">
+      <div class="sprite  logo-item"></div>
+      <div>
+        <h3>Meta-Wiki</h3>
+        <p>Coordinación y documentación comunitaria
+
+          </p>
+      </div>
+    </div>
+ 
+    
+</section>
+  
+</body>
+</html>
