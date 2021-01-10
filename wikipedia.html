@@ -25,6 +25,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      font-size: 13px;
 
     }
 
@@ -448,9 +449,14 @@
     height: 14px;
 
   }
+  .wrapper{
+    width: 1280px;
+    margin: 0 auto;
+  }
    
 
-  @media screen  and (max-width: 763px){
+
+  @media  screen and (max-width: 768px) {
     
     .menu-bottom{
       margin: 10px;
@@ -466,11 +472,45 @@
       display: block;
       text-align: center;
     }
+
+    .menu-bottom .menu-bottom-right{
+    grid-template-columns: repeat(2,1fr);
+  
+    
+     
+    }
+    .header{
+      display: block;
+      font-size: 10px;
+    }
+
+
+    .header-main-menu{
+      width: 100%;
+      background-size: 140px 120px;
+    }
+
+    .wrapper{
+      width: 100vw;
+      border: 1px red solid;
+      margin: 0 auto;
+  }
+
  
+  }
+
+  @media  screen and (max-width: 360px) {
+    .menu-bottom .menu-bottom-right{
+      grid-template-columns: repeat(1,1fr);
+      align-items: center;
+    }
+
   }
     
 </style>
 <body>
+ <div class="wrapper">
+
 
   <header class="header">
       <section class="header-container">
@@ -709,7 +749,7 @@
     </div>
  
     
-</section>
-  
+</sectio>
+</div>
 </body>
 </html>
